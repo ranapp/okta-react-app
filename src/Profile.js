@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useOktaAuth } from '@okta/okta-react';
-import { Header, Icon, Table } from 'semantic-ui-react';
+import { Link } from "react-router-dom";
+import './app.css';
+
+
 
 const Profile = () => {
   const { authState, oktaAuth } = useOktaAuth();
@@ -21,55 +24,37 @@ const Profile = () => {
 
   if (!userInfo) {
     return (
-      <div>
-        <p>Fetching user profile...</p>
+      <div className='err'>
+        <p>You are not authorized to view this page.</p>
+        <Link to="/">
+          <button className="button-56" type="button">
+            Take me back!
+          </button>
+        </Link>
       </div>
     );
   }
 
   return (
     <div>
-      <div>
-        <Header as="h1">
-          <Icon name="drivers license" />
-          {' '}
-          My User Profile (ID Token Claims)
-          {' '}
-        </Header>
-        <p>
-          Below is the information from your ID token which was obtained during the &nbsp;
-          <a href="https://developer.okta.com/docs/guides/implement-auth-code-pkce">PKCE Flow</a>
-          {' '}
-          and is now stored in local storage.
-        </p>
-        <p>
-          This route is protected with the
-          {' '}
-          <code>&lt;SecureRoute&gt;</code>
-          {' '}
-          component, which will ensure that this page cannot be accessed until you have authenticated.
-        </p>
-        <Table>
-          <thead>
-            <tr>
-              <th>Claim</th>
-              <th>Value</th>
-            </tr>
-          </thead>
-          <tbody>
-            {Object.entries(userInfo).map((claimEntry) => {
-              const claimName = claimEntry[0];
-              const claimValue = claimEntry[1];
-              const claimId = `claim-${claimName}`;
-              return (
-                <tr key={claimName}>
-                  <td>{claimName}</td>
-                  <td id={claimId}>{claimValue.toString()}</td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </Table>
+      <hr id="stripe" />
+
+
+      <div className="table">
+        <img src="https://awspracticebucketarya.s3.us-west-1.amazonaws.com/IMG_3611.JPG" alt="headerimg"></img>
+
+
+        <p id="p1"> Welcome, {Object.entries(userInfo)[1][1]}</p>
+        <p id="p2"> Your email is {Object.entries(userInfo)[2][1]}</p>
+        <p id="p3"> and your preferred username is {Object.entries(userInfo)[12][1]}</p>
+
+        <p id="p4">If you would like to change this information, please visit developer.okta.com.</p>
+        <Link to="/">
+          <button className="button-56" id="profile" type="button">
+            Back to Home
+          </button>
+        </Link>
+
       </div>
     </div>
   );
