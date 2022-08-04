@@ -42,7 +42,7 @@ export default withOktaAuth(class Home extends Component {
       
         <div className="main">
           <p id="hometext"> Login  </p>
-          <p id="next">to view your personalized page</p>
+          <p id="next">to view your personalized page.</p>
         </div>
         {body}
         <Link to="/profile">
