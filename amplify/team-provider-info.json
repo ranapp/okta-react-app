@@ -1,0 +1,23 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-oktareactquickstart-dev-141527-authRole",
+      "UnauthRoleArn": "arn:aws:iam::345822697673:role/amplify-oktareactquickstart-dev-141527-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::345822697673:role/amplify-oktareactquickstart-dev-141527-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-oktareactquickstart-dev-141527-deployment",
+      "UnauthRoleName": "amplify-oktareactquickstart-dev-141527-unauthRole",
+      "StackName": "amplify-oktareactquickstart-dev-141527",
+      "StackId": "arn:aws:cloudformation:us-east-1:345822697673:stack/amplify-oktareactquickstart-dev-141527/915be1d0-143a-11ed-8688-0e269eb9582f",
+      "AmplifyAppId": "d2z91ylik7uw0b"
+    },
+    "categories": {
+      "function": {
+        "oktareactquickstart4561a798": {
+          "deploymentBucketName": "amplify-oktareactquickstart-dev-141527-deployment",
+          "s3Key": "amplify-builds/oktareactquickstart4561a798-4d5a333075562b425745-build.zip"
+        }
+      }
+    }
+  }
+}
